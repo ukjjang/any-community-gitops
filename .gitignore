@@ -1,0 +1,17 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+Icon?
+
+# VSCode specific
+.vscode/
+
+# Node.js specific
+node_modules/
+
+# Logs
+*.log
+.idea
