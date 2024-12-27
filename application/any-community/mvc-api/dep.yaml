@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mvc-api-dep
+  namespace: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mvc-api
+  template:
+    metadata:
+      labels:
+        app: mvc-api
+    spec:
+      containers:
+        - name: mvc-api-pod
+          image: ghcr.io/ukjjang/any-community/mvc-api:6a6e2fc
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: mvc-api-cm
+      imagePullSecrets:
+        - name: ghcr-secret
