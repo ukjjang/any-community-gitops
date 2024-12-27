@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: welcome-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: welcome
+  template:
+    metadata:
+      labels:
+        app: welcome
+    spec:
+      containers:
+        - name: welcome-pod
+          image: arm64v8/nginx
+          ports:
+            - containerPort: 80
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              echo "<html>
+              <head>
+                <title>Welcome to ukjjang's Home Server!</title>
+              </head>
+              <body>
+                <h1>Welcome, everyone!</h1>
+                <h2>This is ukjjang's home server, built with Kubernetes.</h2>
+              </body>
+              </html>" > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'
