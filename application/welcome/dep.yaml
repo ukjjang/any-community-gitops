@@ -23,7 +23,7 @@ spec:
             - |
               echo "<html>
               <head>
-                <title>Welcome to ukjjang's Home Server!</title>
+                <title>ukjjang's Home Server</title>
               </head>
               <body>
                 <h1>Welcome, everyone!</h1>
