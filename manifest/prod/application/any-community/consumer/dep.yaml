@@ -5,6 +5,7 @@ metadata:
   namespace: prod
 spec:
   replicas: 1
+
   selector:
     matchLabels:
       app: consumer
@@ -15,7 +16,7 @@ spec:
     spec:
       containers:
         - name: consumer-pod
-          image: ghcr.io/ukjjang/any-community/consumer:202412280423-1e0c475
+          image: ghcr.io/ukjjang/any-community/prod/consumer:202412280423-1e0c475
           ports:
             - containerPort: 8080
           envFrom:
