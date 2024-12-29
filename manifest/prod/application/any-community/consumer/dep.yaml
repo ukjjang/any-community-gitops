@@ -17,7 +17,7 @@ spec:
         - name: consumer-pod
           image: ghcr.io/ukjjang/any-community/prod/consumer:202412290309-48f1e1b
           ports:
-            - containerPort: 8080
+            - containerPort: 8090
           envFrom:
             - configMapRef:
                 name: consumer-cm
