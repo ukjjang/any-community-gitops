@@ -14,13 +14,24 @@ spec:
         app: kafka
     spec:
       containers:
-        - name: kafka-pod
+        - name: kafka
           image: bitnami/kafka:latest
           ports:
             - containerPort: 9092
-          envFrom:
-            - configMapRef:
-                name: kafka-cm
+          env:
+            - name: KAFKA_CFG_ZOOKEEPER_CONNECT
+              value: zookeeper-svc:2181
+            - name: KAFKA_CFG_LISTENERS
+              value: PLAINTEXT://:9092
+            - name: KAFKA_CFG_ADVERTISED_LISTENERS
+              value: PLAINTEXT://kafka-svc:9092
+            - name: KAFKA_CFG_BROKER_ID
+              value: "1"
+            - name: KAFKA_AUTO_CREATE_TOPICS_ENABLE
+              value: "true"
+          volumeMounts:
+            - name: kafka-data
+              mountPath: /bitnami/kafka
       volumes:
         - name: kafka-data
           persistentVolumeClaim:
