@@ -5,7 +5,7 @@ metadata:
   namespace: prod
 spec:
   capacity:
-    storage: 3Gi
+    storage: 10Gi
   accessModes:
     - ReadWriteOnce
   nfs:
@@ -22,4 +22,4 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 3Gi
+      storage: 10Gi
