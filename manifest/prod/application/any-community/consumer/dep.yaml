@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: consumer-pod
-          image: ghcr.io/ukjjang/any-community/prod/consumer:202412290309-48f1e1b
+          image: ghcr.io/ukjjang/any-community/prod/consumer:202412311007-847a81a
           ports:
             - containerPort: 8090
           envFrom:
