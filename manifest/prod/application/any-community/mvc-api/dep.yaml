@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: mvc-api-pod
-          image: ghcr.io/ukjjang/any-community/prod/mvc-api:202501081215-77f550d
+          image: ghcr.io/ukjjang/any-community/prod/mvc-api:202501081630-fdd4547
           ports:
             - containerPort: 8080
           envFrom:
