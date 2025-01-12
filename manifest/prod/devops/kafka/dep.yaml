@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: kafka-pod
-          image: bitnami/kafka:latest
+          image: bitnami/kafka:3.9.0
           ports:
             - containerPort: 9092
           env:

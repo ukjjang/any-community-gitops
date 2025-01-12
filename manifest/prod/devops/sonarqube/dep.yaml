@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: sonarqube
-          image: sonarqube:latest
+          image: sonarqube:lts
           ports:
             - containerPort: 9000
           volumeMounts:
