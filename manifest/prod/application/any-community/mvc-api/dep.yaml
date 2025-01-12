@@ -4,7 +4,7 @@ metadata:
   name: mvc-api-dep
   namespace: prod
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: mvc-api
@@ -21,12 +21,12 @@ spec:
           envFrom:
             - configMapRef:
                 name: mvc-api-cm
-          resources:
-            requests:
-              cpu: 50m
-              memory: 200Mi
-            limits:
-              cpu: 100m
-              memory: 400Mi
+#          resources:
+#            requests:
+#              cpu: 50m
+#              memory: 200Mi
+#            limits:
+#              cpu: 100m
+#              memory: 400Mi
       imagePullSecrets:
         - name: ghcr-secret
