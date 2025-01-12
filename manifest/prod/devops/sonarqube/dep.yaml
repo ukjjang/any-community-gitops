@@ -21,6 +21,13 @@ spec:
           volumeMounts:
             - mountPath: /opt/sonarqube/data
               name: sonarqube-data
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 200m
+              memory: 512Mi
       volumes:
         - name: sonarqube-data
           persistentVolumeClaim:

@@ -24,6 +24,13 @@ spec:
           volumeMounts:
             - name: zookeeper-data
               mountPath: /bitnami/zookeeper
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 100m
+              memory: 256Mi
       volumes:
         - name: zookeeper-data
           persistentVolumeClaim:
